@@ -3,8 +3,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Categorias from './components/Categorias'
 import ListaProductos from './components/ListaProductos'
-import Delivery from './components/Delivery'
-import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import Carrito from './components/Carrito'
 import { productos } from './data/productos'
@@ -17,8 +15,6 @@ function App() {
         <Hero />
         <Categorias categorias={[...new Set(productos.map((producto) => producto.categoria))]} />
         <ListaProductos productos={productos} />
-        <Delivery />
-        <Contacto />
       </main>
       <Footer />
       <Carrito />

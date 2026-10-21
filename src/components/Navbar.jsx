@@ -1,30 +1,55 @@
-import { Container, Form, Navbar as BarraNavegacion, Nav } from 'react-bootstrap'
+import { Container, Navbar as BarraNavegacion, Nav } from "react-bootstrap";
 
 function Navbar() {
   return (
-    <BarraNavegacion expand="lg" className="navbar-esquina sticky-top" data-bs-theme="dark">
-      <Container>
-        <BarraNavegacion.Brand href="#inicio" className="brand-esquina">
-          <span className="brand-mark">L</span>
-          <span>La Esquina</span>
-        </BarraNavegacion.Brand>
-        <BarraNavegacion.Toggle aria-controls="menu-principal" />
-        <BarraNavegacion.Collapse id="menu-principal">
-          <Nav className="me-auto">
-            <Nav.Link href="#productos">Productos</Nav.Link>
-            <Nav.Link href="#delivery">Delivery</Nav.Link>
-            <Nav.Link href="#contacto">Contacto</Nav.Link>
-          </Nav>
-          <Form className="d-flex navbar-search" role="search">
-            <Form.Control type="search" placeholder="Buscar productos" aria-label="Buscar productos" />
-          </Form>
-          <button type="button" className="btn btn-amarillo ms-lg-3 mt-3 mt-lg-0">
-            Carrito <span className="badge text-bg-rojo">0</span>
-          </button>
-        </BarraNavegacion.Collapse>
-      </Container>
-    </BarraNavegacion>
-  )
+    <>
+      <div className="announcement-bar">
+        <div
+          className="announcement-track"
+          aria-label="Promociones de La Esquina"
+        >
+          <div className="announcement-group">
+            <span>Delivery gratis desde S/ 50</span>
+            <span>Verdura fresca cada mañana</span>
+            <span>Pan caliente a las 7:30</span>
+            <span>Abierto todos los días de 7:00 a 23:00</span>
+          </div>
+          <div className="announcement-group" aria-hidden="true">
+            <span>Delivery gratis desde S/ 50</span>
+            <span>Verdura fresca cada mañana</span>
+            <span>Pan caliente a las 7:30</span>
+            <span>Abierto todos los días de 7:00 a 23:00</span>
+          </div>
+        </div>
+      </div>
+      <BarraNavegacion
+        expand="lg"
+        className="navbar-esquina"
+        data-bs-theme="light"
+      >
+        <Container>
+          <BarraNavegacion.Brand href="#inicio" className="brand-esquina">
+            <span>La Esquina.</span>
+            <small>MINIMARKET</small>
+          </BarraNavegacion.Brand>
+          <BarraNavegacion.Toggle aria-controls="menu-principal" />
+          <BarraNavegacion.Collapse id="menu-principal">
+            <Nav className="mx-auto">
+              <Nav.Link className="active" href="#inicio">
+                Inicio
+              </Nav.Link>
+              <Nav.Link href="#productos">Catálogo</Nav.Link>
+
+              <Nav.Link href="#contacto">Contacto</Nav.Link>
+            </Nav>
+            <button type="button" className="btn btn-carrito">
+              Carrito <span>0</span>
+            </button>
+          </BarraNavegacion.Collapse>
+        </Container>
+      </BarraNavegacion>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

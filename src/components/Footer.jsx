@@ -2,10 +2,33 @@ import { Container } from 'react-bootstrap'
 
 function Footer() {
   return (
-    <footer className="footer-esquina">
-      <Container className="d-flex flex-column flex-md-row justify-content-between gap-3">
-        <span>© 2026 La Esquina. Hecho con cariño en Lima.</span>
-        <span>Productos sujetos a disponibilidad.</span>
+    <footer id="contacto" className="footer-esquina">
+      <Container>
+        <div className="footer-columns">
+          <div className="footer-brand">
+            <h2>La Esquina.</h2>
+            <p>El minimarket del barrio. Lo que necesitas, cuando lo necesitas, sin salir de la cuadra.</p>
+          </div>
+          <div className="footer-contact">
+            <h3>Encuéntranos</h3>
+            {/* TODO: reemplazar dirección y teléfono con los datos reales del negocio. */}
+            <p><span aria-hidden="true">⌖</span> senati.independencia, los olivos, Lima</p>
+            <p><span aria-hidden="true">◷</span> Lun a Dom · 7:00 - 23:00</p>
+            <p><span aria-hidden="true">☏</span> (01) 555 0142</p>
+          </div>
+          <nav className="footer-links" aria-label="Enlaces del pie de página">
+            <h3>Explora</h3>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Catálogo</a>
+            <a href="#delivery">Delivery</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#carrito">Carrito</a>
+          </nav>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2026 Minimarket La Esquina</span>
+          <span>Productos sujetos a disponibilidad · Hecho con cariño en Lima</span>
+        </div>
       </Container>
     </footer>
   )
