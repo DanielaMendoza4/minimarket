@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap'
 
-function Footer() {
+function Footer({ onAbrirCarrito, onAbrirDelivery, onVolverAInicio, onVerCatalogo }) {
   return (
     <footer id="contacto" className="footer-esquina">
       <Container>
@@ -11,18 +11,26 @@ function Footer() {
           </div>
           <div className="footer-contact">
             <h3>Encuéntranos</h3>
-            {/* TODO: reemplazar dirección y teléfono con los datos reales del negocio. */}
-            <p><span aria-hidden="true">⌖</span> senati.independencia, los olivos, Lima</p>
+            <p><span aria-hidden="true">⌖</span> Av. Los Almendros 128, esquina con Jr. Lima</p>
             <p><span aria-hidden="true">◷</span> Lun a Dom · 7:00 - 23:00</p>
             <p><span aria-hidden="true">☏</span> (01) 555 0142</p>
           </div>
           <nav className="footer-links" aria-label="Enlaces del pie de página">
             <h3>Explora</h3>
-            <a href="#inicio">Inicio</a>
-            <a href="#productos">Catálogo</a>
-            <a href="#delivery">Delivery</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#carrito">Carrito</a>
+            <a href="#inicio" onClick={onVolverAInicio}>Inicio</a>
+            <a href="#productos" onClick={(event) => {
+              event.preventDefault()
+              onVerCatalogo()
+            }}>Catálogo</a>
+            <a href="#delivery" onClick={(event) => {
+              event.preventDefault()
+              onAbrirDelivery()
+            }}>Delivery</a>
+            <a href="#contacto" onClick={onVolverAInicio}>Contacto</a>
+            <a href="#carrito" onClick={(event) => {
+              event.preventDefault()
+              onAbrirCarrito()
+            }}>Carrito</a>
           </nav>
         </div>
         <div className="footer-bottom">
