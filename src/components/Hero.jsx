@@ -6,15 +6,22 @@ function Hero() {
       <Container>
         <Row className="align-items-center g-4">
           <Col lg={7}>
-            <p className="eyebrow">Tu tienda de confianza en Lima</p>
-            <h1>Todo lo que necesitas, <span>cerquita de casa.</span></h1>
-            <p className="hero-copy">Compra tus favoritos del barrio y recíbelos rápido, fresco y seguro.</p>
-            <Button href="#productos" className="btn-rojo">Ver productos</Button>
+            <p className="eyebrow">N° 128 · DESDE 1998</p>
+            <h1>Tu despensa, <em>a la vuelta</em> de la esquina.</h1>
+            <p className="hero-copy">Verduras del día, lácteos, bebidas frías y todo lo que se acaba justo cuando lo necesitas. Pide por la web y lo llevamos a tu puerta.</p>
+            <div className="hero-actions">
+              <Button href="#productos" className="btn-rojo">Ver catálogo <span>→</span></Button>
+              <Button href="#contacto" className="btn-outline-esquina">Cómo funciona el delivery</Button>
+            </div>
           </Col>
           <Col lg={5}>
-            <div className="hero-illustration" role="img" aria-label="Canasta con productos del minimarket">
-              <span className="hero-sticker">¡Qué rico!</span>
-              🛒
+            <div className="hero-photo-wrap">
+              {/* TODO: reemplazar esta URL por una foto real de la tienda. */}
+              <img className="hero-photo" src="https://images.unsplash.com/photo-1579113800032-c38bd7635818?auto=format&fit=crop&w=1000&q=85" alt="Frutas frescas en los estantes de La Esquina" />
+              <a className="hero-sticker" href="#productos">
+                <small>OFERTA DE LA SEMANA</small>
+                <strong>Paltas S/ 20.60 <i>/kg</i></strong>
+              </a>
             </div>
           </Col>
         </Row>
