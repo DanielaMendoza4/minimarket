@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import ProductoCard from './ProductoCard'
+import ProductoCard from '../ProductoCard/ProductoCard'
 
 function ListaProductos({ productos, carrito, onAgregar, mostrarTodos, onAlternarTodos }) {
   return (

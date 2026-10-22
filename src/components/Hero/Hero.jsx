@@ -1,5 +1,5 @@
 import { Button, Col, Container, Row } from 'react-bootstrap'
-import { imagenHero } from '../assets/imagenes'
+import { imagenHero } from '../../assets/imagenes'
 
 function Hero({ onVerCatalogo, onAbrirDelivery }) {
   return (
