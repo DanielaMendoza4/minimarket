@@ -3,6 +3,25 @@ import { Container, Navbar as BarraNavegacion, Nav } from "react-bootstrap";
 function Navbar({ cantidadEnCarrito, vista, onAbrirCarrito, onAbrirDelivery, onVolverAComprar, onVerCatalogo }) {
   return (
     <>
+      <div className="announcement-bar">
+        <div
+          className="announcement-track"
+          aria-label="Promociones de La Esquina"
+        >
+          <div className="announcement-group">
+            <span>Delivery gratis desde S/ 50</span>
+            <span>Verdura fresca cada mañana</span>
+            <span>Pan caliente a las 7:30</span>
+            <span>Abierto todos los días de 7:00 a 23:00</span>
+          </div>
+          <div className="announcement-group" aria-hidden="true">
+            <span>Delivery gratis desde S/ 50</span>
+            <span>Verdura fresca cada mañana</span>
+            <span>Pan caliente a las 7:30</span>
+            <span>Abierto todos los días de 7:00 a 23:00</span>
+          </div>
+        </div>
+      </div>
       <BarraNavegacion
         expand="lg"
         className="navbar-esquina"

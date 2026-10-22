@@ -937,6 +937,11 @@
     animation: none;
   }
 
+  .announcement-bar {
+    height: 34px;
+    font-size: 0.72rem;
+  }
+
   .hero-section {
     padding-top: 3.5rem;
   }

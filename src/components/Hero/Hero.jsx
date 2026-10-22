@@ -1,5 +1,4 @@
 import { Button, Col, Container, Row } from 'react-bootstrap'
-import { imagenHero } from '../../assets/imagenes'
 
 function Hero({ onVerCatalogo, onAbrirDelivery }) {
   return (
@@ -17,7 +16,7 @@ function Hero({ onVerCatalogo, onAbrirDelivery }) {
           </Col>
           <Col lg={5}>
             <div className="hero-photo-wrap">
-              <img className="hero-photo" src={imagenHero} alt="Ilustración de frutas frescas en una caja" />
+              <img className="hero-photo" src="https://images.unsplash.com/photo-1579113800032-c38bd7635818?auto=format&fit=crop&w=1000&q=85" alt="Frutas frescas en los estantes de La Esquina" />
               <a className="hero-sticker" href="#productos">
                 <small>OFERTA DE LA SEMANA</small>
                 <strong>Paltas S/ 20.60 <i>/kg</i></strong>
