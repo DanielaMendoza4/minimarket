@@ -1,8 +1,8 @@
 import { Container } from 'react-bootstrap'
 
-function Footer({ onAbrirCarrito, onAbrirDelivery, onVolverAInicio, onVerCatalogo }) {
+function Footer({ onAbrirCarrito, onAbrirDelivery, onAbrirContacto, onVolverAInicio, onVerCatalogo }) {
   return (
-    <footer id="contacto" className="footer-esquina">
+    <footer className="footer-esquina">
       <Container>
         <div className="footer-columns">
           <div className="footer-brand">
@@ -17,17 +17,23 @@ function Footer({ onAbrirCarrito, onAbrirDelivery, onVolverAInicio, onVerCatalog
           </div>
           <nav className="footer-links" aria-label="Enlaces del pie de página">
             <h3>Explora</h3>
-            <a href="#inicio" onClick={onVolverAInicio}>Inicio</a>
-            <a href="#productos" onClick={(event) => {
+            <a href="/" onClick={(event) => {
+              event.preventDefault()
+              onVolverAInicio()
+            }}>Inicio</a>
+            <a href="/#productos" onClick={(event) => {
               event.preventDefault()
               onVerCatalogo()
             }}>Catálogo</a>
-            <a href="#delivery" onClick={(event) => {
+            <a href="/delivery" onClick={(event) => {
               event.preventDefault()
               onAbrirDelivery()
             }}>Delivery</a>
-            <a href="#contacto" onClick={onVolverAInicio}>Contacto</a>
-            <a href="#carrito" onClick={(event) => {
+            <a href="/contacto" onClick={(event) => {
+              event.preventDefault()
+              onAbrirContacto()
+            }}>Contacto</a>
+            <a href="/carrito" onClick={(event) => {
               event.preventDefault()
               onAbrirCarrito()
             }}>Carrito</a>
