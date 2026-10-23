@@ -1,5 +1,6 @@
 import './App.css'
 import { useEffect, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Categorias from './components/Categorias/Categorias'
@@ -8,20 +9,39 @@ import Ventajas from './components/Ventajas/Ventajas'
 import Footer from './components/Footer/Footer'
 import Carrito from './components/Carrito/Carrito'
 import Delivery from './components/Delivery/Delivery'
+import Contacto from './components/Contacto/Contacto'
 import { productos } from './data/productos'
+
+const vistasPorRuta = {
+  '/': 'inicio',
+  '/carrito': 'carrito',
+  '/delivery': 'delivery',
+  '/contacto': 'contacto',
+}
 
 function App() {
   const [carrito, setCarrito] = useState([])
-  const [vista, setVista] = useState('inicio')
   const [categoriaActiva, setCategoriaActiva] = useState('Todas')
   const [mostrarTodos, setMostrarTodos] = useState(false)
   const desplazamientoPendiente = useRef(false)
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const vista = vistasPorRuta[pathname] ?? 'inicio'
 
   useEffect(() => {
-    if (vista === 'inicio' && desplazamientoPendiente.current) {
+    if (!vistasPorRuta[pathname]) {
+      navigate('/', { replace: true })
+    }
+  }, [navigate, pathname])
+
+  useEffect(() => {
+    if (desplazamientoPendiente.current) {
       document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })
       desplazamientoPendiente.current = false
+      return
     }
+
+    window.scrollTo({ top: 0 })
   }, [vista])
 
   const verCatalogo = () => {
@@ -31,7 +51,7 @@ function App() {
     }
 
     desplazamientoPendiente.current = true
-    setVista('inicio')
+    navigate('/')
   }
 
   const agregarAlCarrito = (producto) => {
@@ -86,9 +106,10 @@ function App() {
       <Navbar
         cantidadEnCarrito={cantidadEnCarrito}
         vista={vista}
-        onAbrirCarrito={() => setVista('carrito')}
-        onAbrirDelivery={() => setVista('delivery')}
-        onVolverAComprar={() => setVista('inicio')}
+        onAbrirCarrito={() => navigate('/carrito')}
+        onAbrirDelivery={() => navigate('/delivery')}
+        onAbrirContacto={() => navigate('/contacto')}
+        onVolverAComprar={() => navigate('/')}
         onVerCatalogo={verCatalogo}
       />
       {vista === 'carrito' ? (
@@ -97,17 +118,22 @@ function App() {
           onCambiarCantidad={cambiarCantidad}
           onEliminar={eliminarDelCarrito}
           onVaciar={vaciarCarrito}
-          onSeguirComprando={() => setVista('inicio')}
+          onSeguirComprando={() => navigate('/')}
         />
       ) : vista === 'delivery' ? (
         <>
           <Delivery onEmpezarPedido={verCatalogo} />
-          <Footer onAbrirCarrito={() => setVista('carrito')} onAbrirDelivery={() => setVista('delivery')} onVolverAInicio={() => setVista('inicio')} onVerCatalogo={verCatalogo} />
+          <Footer onAbrirCarrito={() => navigate('/carrito')} onAbrirDelivery={() => navigate('/delivery')} onAbrirContacto={() => navigate('/contacto')} onVolverAInicio={() => navigate('/')} onVerCatalogo={verCatalogo} />
+        </>
+      ) : vista === 'contacto' ? (
+        <>
+          <Contacto />
+          <Footer onAbrirCarrito={() => navigate('/carrito')} onAbrirDelivery={() => navigate('/delivery')} onAbrirContacto={() => navigate('/contacto')} onVolverAInicio={() => navigate('/')} onVerCatalogo={verCatalogo} />
         </>
       ) : (
         <>
           <main>
-            <Hero onVerCatalogo={verCatalogo} onAbrirDelivery={() => setVista('delivery')} />
+            <Hero onVerCatalogo={verCatalogo} onAbrirDelivery={() => navigate('/delivery')} />
             <Categorias
               categorias={[...new Set(productos.map((producto) => producto.categoria))]}
               categoriaActiva={categoriaActiva}
@@ -122,7 +148,7 @@ function App() {
             />
             <Ventajas />
           </main>
-          <Footer onAbrirCarrito={() => setVista('carrito')} onAbrirDelivery={() => setVista('delivery')} onVolverAInicio={() => setVista('inicio')} onVerCatalogo={verCatalogo} />
+          <Footer onAbrirCarrito={() => navigate('/carrito')} onAbrirDelivery={() => navigate('/delivery')} onAbrirContacto={() => navigate('/contacto')} onVolverAInicio={() => navigate('/')} onVerCatalogo={verCatalogo} />
         </>
       )}
     </div>

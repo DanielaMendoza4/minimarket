@@ -1,6 +1,6 @@
 import { Container, Navbar as BarraNavegacion, Nav } from "react-bootstrap";
 
-function Navbar({ cantidadEnCarrito, vista, onAbrirCarrito, onAbrirDelivery, onVolverAComprar, onVerCatalogo }) {
+function Navbar({ cantidadEnCarrito, vista, onAbrirCarrito, onAbrirDelivery, onAbrirContacto, onVolverAComprar, onVerCatalogo }) {
   return (
     <>
       <div className="announcement-bar">
@@ -28,25 +28,34 @@ function Navbar({ cantidadEnCarrito, vista, onAbrirCarrito, onAbrirDelivery, onV
         data-bs-theme="light"
       >
         <Container>
-          <BarraNavegacion.Brand href="#inicio" className="brand-esquina">
+          <BarraNavegacion.Brand href="/" className="brand-esquina" onClick={(event) => {
+            event.preventDefault()
+            onVolverAComprar()
+          }}>
             <span>La Esquina.</span>
             <small>MINIMARKET</small>
           </BarraNavegacion.Brand>
           <BarraNavegacion.Toggle aria-controls="menu-principal" />
           <BarraNavegacion.Collapse id="menu-principal">
             <Nav className="mx-auto">
-              <Nav.Link className={vista === 'inicio' ? 'active' : ''} href="#inicio" onClick={onVolverAComprar}>
+              <Nav.Link className={vista === 'inicio' ? 'active' : ''} href="/" onClick={(event) => {
+                event.preventDefault()
+                onVolverAComprar()
+              }}>
                 Inicio
               </Nav.Link>
-              <Nav.Link href="#productos" onClick={(event) => {
+              <Nav.Link href="/#productos" onClick={(event) => {
                 event.preventDefault()
                 onVerCatalogo()
               }}>Catálogo</Nav.Link>
-              <Nav.Link className={vista === 'delivery' ? 'active' : ''} href="#delivery" onClick={(event) => {
+              <Nav.Link className={vista === 'delivery' ? 'active' : ''} href="/delivery" onClick={(event) => {
                 event.preventDefault()
                 onAbrirDelivery()
               }}>Delivery</Nav.Link>
-              <Nav.Link href="#contacto" onClick={onVolverAComprar}>Contacto</Nav.Link>
+              <Nav.Link className={vista === 'contacto' ? 'active' : ''} href="/contacto" onClick={(event) => {
+                event.preventDefault()
+                onAbrirContacto()
+              }}>Contacto</Nav.Link>
             </Nav>
             <button type="button" className="btn btn-carrito" onClick={onAbrirCarrito} aria-label={`Abrir carrito con ${cantidadEnCarrito} productos`}>
               <svg className="cart-button-icon" viewBox="0 0 24 24" aria-hidden="true">
