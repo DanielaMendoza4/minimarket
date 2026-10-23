@@ -15,11 +15,7 @@ const imagen = (ruta) => {
 }
 
 const fotosRemotas = {
-  arroz: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80',
-  pan: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
   huevos: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=600&q=80',
-  atun: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80',
-  cafe: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80',
 }
 
 const producto = (
@@ -47,12 +43,37 @@ const producto = (
 })
 
 export const productos = [
-  producto(1, 'Arroz Costeño', 'Despensa', 'Abarrotes', 4.9, '1 kg', 'Arroz extra largo de grano seleccionado, ideal para el día a día.', fotosRemotas.arroz, 12, true),
+  producto(1, 'Arroz Costeño', 'Despensa', 'Abarrotes', 4.9, '1 kg', 'Arroz extra largo de grano seleccionado, ideal para el día a día.', 'abarrotes/arroz_costeño.jpg', 12, true),
   producto(2, 'Leche Gloria', 'Lácteos', 'Leches', 4.2, '400 g', 'Leche entera fortificada con vitaminas A y D, presentación de 400 g.', 'lacteos/lechegloria_caja.jpg', 18, true),
-  producto(3, 'Pan de molde', 'Panadería', 'Panes', 8.5, '500 g', 'Pan de molde suave y esponjoso, perfecto para sándwiches y tostadas.', fotosRemotas.pan, 8, true),
+  producto(3, 'Pan blanco Bimbo', 'Panadería', 'Panes', 8.5, '500 g', 'Pan de molde blanco Bimbo, suave y esponjoso, perfecto para sándwiches y tostadas.', 'panaderia/panblanco_bimbo.jpg', 8, true),
+  producto(104, 'Pan integral Bimbo', 'Panadería', 'Panes', 8.9, '500 g', 'Pan de molde integral Bimbo, elaborado con harina integral y rico en fibra.', 'panaderia/panintegral_bimbo.jpg', 10),
+  producto(105, 'Pan Vital avena y girasol', 'Panadería', 'Panes', 9.5, '500 g', 'Pan Vital con avena y girasol, suave y nutritivo para el desayuno.', 'panaderia/pan_vital_avenagirasol.jpg', 8),
+  producto(106, 'Tostada integral', 'Panadería', 'Tostadas', 6.5, '400 g', 'Tostadas integrales crocantes, ideales para acompañar desayunos y meriendas.', 'panaderia/tostada_integral.jpg', 9),
+  producto(107, 'Tostadas clásicas', 'Panadería', 'Tostadas', 6.0, '400 g', 'Tostadas clásicas de textura crocante, perfectas para untar o acompañar.', 'panaderia/tosttadas_clasicas.jpg', 11),
+  producto(108, 'Keke familiar marmoleado', 'Panadería', 'Kekes', 7.9, '500 g', 'Keke familiar marmoleado de textura esponjosa, ideal para compartir.', 'panaderia/keke_familiar_marmoleado.jpg', 8),
+  producto(109, 'Keke familiar naranja', 'Panadería', 'Kekes', 7.9, '500 g', 'Keke familiar con sabor a naranja, suave y esponjoso para toda la familia.', 'panaderia/keke_familiar_naranja.jpg', 8),
+  producto(110, 'Keke marmoleado', 'Panadería', 'Kekes', 4.5, '250 g', 'Keke marmoleado en presentación individual, perfecto para la hora del té.', 'panaderia/keke_marmoleado.jpg', 10),
+  producto(111, 'Kekitos naranja', 'Panadería', 'Kekes', 2.5, '6 unidades', 'Kekitos sabor naranja, pequeños bocadillos esponjosos para la lonchera.', 'panaderia/kekitos_naranja.jpg', 18),
+  producto(112, 'Kekitos vainilla', 'Panadería', 'Kekes', 2.5, '6 unidades', 'Kekitos sabor vainilla, prácticos y deliciosos para cualquier momento.', 'panaderia/kekitos_vainilla.jpg', 18),
+  producto(113, 'Queque Junior', 'Panadería', 'Kekes', 3.5, '1 unidad', 'Queque Junior sabor original, un clásico esponjoso para los más pequeños.', 'panaderia/queque_junior.jpg', 12),
+  producto(114, 'Queque Nito', 'Panadería', 'Kekes', 3.5, '1 unidad', 'Queque Nito sabor tradicional, ideal para el antojo de la tarde.', 'panaderia/queque_nito.jpg', 12),
   producto(4, 'Huevos de corral', 'Lácteos', 'Huevos', 10.9, '12 unidades', 'Huevos frescos de corral, ideales para el desayuno y la repostería.', fotosRemotas.huevos, 10, true),
-  producto(5, 'Atún en conserva', 'Despensa', 'Abarrotes', 6.9, '170 g', 'Atún en conserva en aceite vegetal, listo para ensaladas y sándwiches.', fotosRemotas.atun, 7, true),
-  producto(6, 'Café tostado', 'Despensa', 'Abarrotes', 13.9, '200 g', 'Café tostado y molido de aroma intenso, ideal para preparar en casa.', fotosRemotas.cafe, 6, true),
+  producto(5, 'Atún Gloria', 'Despensa', 'Abarrotes', 6.9, '170 g', 'Atún en conserva Gloria en aceite vegetal, listo para ensaladas y sándwiches.', 'abarrotes/atun_gloria.jpg', 7, true),
+  producto(6, "Café Tostao' Selecto", 'Despensa', 'Abarrotes', 11.9, '454 g', "Café tostado y molido Tostao' Selecto, de aroma intenso y sabor equilibrado.", 'abarrotes/cafe_tostado.jpg', 8, true),
+  producto(125, 'Café Cafetal Selecto', 'Despensa', 'Abarrotes', 13.9, '500 g', 'Café tostado y molido Cafetal Selecto, ideal para preparar en casa.', 'abarrotes/cafe_tostado_molido.jpg', 9),
+  producto(126, 'Café Altomayo Gourmet', 'Despensa', 'Abarrotes', 16.9, '250 g', 'Café tostado en grano Altomayo Gourmet, de aroma y sabor intensos.', 'abarrotes/cafe_gourmet.jpg', 6),
+  producto(127, 'Té McCormick manzanilla-anís', 'Despensa', 'Abarrotes', 4.5, '1 caja', 'Té de manzanilla-anís McCormick, sin cafeína, ideal para relajarse.', 'abarrotes/tedemanzanilla_mcCormick.jpg', 16),
+  producto(128, 'Té Herbi anís', 'Despensa', 'Abarrotes', 8.9, '100 sobres', 'Té de anís Herbi en caja de 100 sobres, aromático y refrescante.', 'abarrotes/te_anis100sobres.jpg', 10),
+  producto(115, 'Arroz Faraón', 'Despensa', 'Abarrotes', 4.9, '1 kg', 'Arroz extra largo Faraón, de grano seleccionado y cocción pareja.', 'abarrotes/arroz_faraon.jpg', 14),
+  producto(116, 'Arroz Paisana', 'Despensa', 'Abarrotes', 4.7, '1 kg', 'Arroz Paisana de grano largo, ideal para acompañar tus comidas.', 'abarrotes/arroz_paisana.jpg', 16),
+  producto(117, 'Atún Florida', 'Despensa', 'Abarrotes', 6.5, '170 g', 'Atún Florida en conserva en aceite vegetal, listo para tus recetas.', 'abarrotes/atun_florida.jpg', 10),
+  producto(118, 'Atún Primor', 'Despensa', 'Abarrotes', 6.8, '170 g', 'Atún Primor en conserva, ideal para ensaladas y sándwiches.', 'abarrotes/atun_primor.jpg', 9),
+  producto(119, 'Azúcar blanca Metro', 'Despensa', 'Abarrotes', 4.5, '1 kg', 'Azúcar blanca refinada Metro, ideal para endulzar bebidas y postres.', 'abarrotes/azucar_blanca_metro.jpg', 20),
+  producto(120, 'Azúcar rubia', 'Despensa', 'Abarrotes', 4.2, '1 kg', 'Azúcar rubia de sabor natural, perfecta para la cocina diaria.', 'abarrotes/azucar_rubia.jpg', 18),
+  producto(121, 'Azúcar rubia Aro', 'Despensa', 'Abarrotes', 4.3, '1 kg', 'Azúcar rubia Aro, de grano uniforme y sabor suave.', 'abarrotes/azucar_rubia_aro.jpg', 15),
+  producto(122, 'Gelatina Royal fresa', 'Despensa', 'Abarrotes', 2.5, '80 g', 'Gelatina Royal sabor fresa, fácil de preparar y perfecta para postres.', 'abarrotes/gelatina_fresa_royal.jpg', 24),
+  producto(123, 'Gelatina Universal fresa', 'Despensa', 'Abarrotes', 2.3, '80 g', 'Gelatina Universal sabor fresa, una opción económica para el postre.', 'abarrotes/gelatina_fresa_universal.jpg', 22),
+  producto(124, 'Gelatina Umsha uva', 'Despensa', 'Abarrotes', 2.4, '80 g', 'Gelatina Umsha sabor uva, refrescante y fácil de preparar.', 'abarrotes/gelatina_umsha_uva.jpg', 20),
   producto(7, 'Leche condensada', 'Lácteos', 'Leches', 7.5, '397 g', 'Leche condensada azucarada, perfecta para postres y bebidas.', 'lacteos/leche_condensada.jpg', 14),
   producto(8, 'Leche Danlac', 'Lácteos', 'Leches', 4.0, '400 g', 'Leche entera en caja de 400 g, con calcio y vitaminas.', 'lacteos/leche_danlac.jpg', 16),
   producto(9, 'Leche Gloria Niños', 'Lácteos', 'Leches', 4.8, '400 g', 'Leche especialmente formulada para niños, con vitaminas y minerales.', 'lacteos/leche_gloria_niños.jpg', 12),
