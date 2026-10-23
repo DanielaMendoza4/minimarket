@@ -44,7 +44,7 @@ function Navbar({ cantidadEnCarrito, vista, onAbrirCarrito, onAbrirDelivery, onA
               }}>
                 Inicio
               </Nav.Link>
-              <Nav.Link href="/#productos" onClick={(event) => {
+              <Nav.Link className={vista === 'catalogo' ? 'active' : ''} href="/catalogo" onClick={(event) => {
                 event.preventDefault()
                 onVerCatalogo()
               }}>Catálogo</Nav.Link>

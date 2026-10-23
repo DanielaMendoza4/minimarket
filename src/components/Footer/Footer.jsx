@@ -21,7 +21,7 @@ function Footer({ onAbrirCarrito, onAbrirDelivery, onAbrirContacto, onVolverAIni
               event.preventDefault()
               onVolverAInicio()
             }}>Inicio</a>
-            <a href="/#productos" onClick={(event) => {
+            <a href="/catalogo" onClick={(event) => {
               event.preventDefault()
               onVerCatalogo()
             }}>Catálogo</a>
